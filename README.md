@@ -1,3 +1,9 @@
+### Simplification
+Because of limitation of implementation time there is some known issues:
+- The app doesn't contain the separated DAL layer. For the production purposses need to implement separate project PokemonDAL.proj, which contains DB entities and migrations. 
+- It's better to separate logging/caching/mapping/common logic to it's own assembly to have ability to share this logic with different layers of application.
+- For more complex business logic and for the availability purpose it's better to implement the separate service with following flow: API - PokemonService - DAL. It allows to have ability to multiply services to support the high load. Services might be connected via gRPC protocol.
+
 ### Objective
 
 Your assignment is to create a Pokémon API from a CSV file using C# and .Net.
